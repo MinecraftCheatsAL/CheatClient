@@ -6,26 +6,42 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Particles background */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Body content */
 body {
-    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     color: #fff;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px;
-    overflow-x: hidden;
+    padding: 50px 20px;
+    background: #0d0d0d;
 }
 
+/* Header */
 header {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     animation: fadeInDown 1s ease forwards;
 }
 
 header h1 {
     font-size: 3em;
     margin-bottom: 10px;
+    color: #ff3d00;
 }
 
 header p {
@@ -33,7 +49,7 @@ header p {
     color: #ccc;
 }
 
-/* Card Container */
+/* Card container */
 .card-container {
     display: flex;
     gap: 30px;
@@ -41,16 +57,18 @@ header p {
     justify-content: center;
 }
 
-/* Card Styling */
+/* Cards */
 .card {
-    background: rgba(30,30,30,0.9);
-    padding: 25px;
+    background: rgba(20,20,20,0.85);
+    padding: 30px;
     border-radius: 20px;
     width: 280px;
     text-align: center;
     transition: transform 0.5s, box-shadow 0.5s;
     cursor: pointer;
     animation: fadeInUp 1s ease forwards;
+    position: relative;
+    overflow: hidden;
 }
 
 .card img {
@@ -70,23 +88,23 @@ header p {
     font-size: 0.95em;
 }
 
-/* Hover Effects */
+/* Hover effects */
 .card:hover {
     transform: translateY(-15px) scale(1.05);
-    box-shadow: 0 20px 30px rgba(0,0,0,0.7);
+    box-shadow: 0 25px 40px rgba(255, 61, 0, 0.6);
 }
 
 .card:hover img {
-    transform: rotate(10deg) scale(1.1);
+    transform: rotate(15deg) scale(1.1);
 }
 
 .btn {
     display: inline-block;
     margin-top: 15px;
-    padding: 10px 20px;
+    padding: 10px 25px;
     background: #ff3d00;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
     transition: background 0.3s, transform 0.3s;
 }
@@ -105,6 +123,24 @@ header p {
 @keyframes fadeInDown {
     0% { opacity: 0; transform: translateY(-30px); }
     100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating particles on cards */
+.card::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,61,0,0.15) 0%, transparent 70%);
+    top: -50%;
+    left: -50%;
+    transform: rotate(0deg);
+    animation: rotateGlow 6s linear infinite;
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Responsive */
