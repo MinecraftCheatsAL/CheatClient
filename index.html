@@ -10,11 +10,6 @@
 </head>
 <body>
 
-<div id="intro">
-  <h1>MINECRAFT CHEATS HUB</h1>
-  <span>Loading modules...</span>
-</div>
-
 <div class="cursor"></div>
 
 <div id="updater">
@@ -30,7 +25,7 @@
   </div>
 </div>
 
-<div id="main">
+<div id="main" class="show">
 <header>
   <h1>MINECRAFT CHEATS HUB</h1>
   <p>Select your client</p>
@@ -60,19 +55,6 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
 <script>
-/* INTRO */
-const intro = document.getElementById('intro');
-const main = document.getElementById('main');
-const updater = document.getElementById('updater');
-const modal = document.getElementById('modal');
-const modalTitle = document.getElementById('modal-title');
-const modalFeatures = document.getElementById('modal-features');
-
-setTimeout(()=>{
-  intro.classList.add("hide");
-  main.classList.add("show");
-},2200);
-
 /* CURSOR */
 const cursor=document.querySelector(".cursor");
 document.addEventListener("mousemove",e=>{
@@ -92,11 +74,16 @@ document.addEventListener("click",e=>{
 
 /* UPDATER */
 window.onload=()=>{
+  const updater = document.getElementById("updater");
   updater.classList.add("show");
   setTimeout(()=>updater.classList.remove("show"),3500);
 };
 
 /* MODAL */
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modal-title");
+const modalFeatures = document.getElementById("modal-features");
+
 const data={
   augustus:[
     "Advanced PvP modules",
@@ -125,16 +112,14 @@ function showModal(c){
 function closeModal(){modal.classList.remove("show");}
 
 /* PARTICLES */
-if(document.getElementById('particles-js')){
-  particlesJS("particles-js",{
-   particles:{
-    number:{value:60},
-    color:{value:"#3b82f6"},
-    line_linked:{enable:true,color:"#3b82f6",opacity:.15},
-    move:{speed:.6}
-   }
-  });
-}
+particlesJS("particles-js",{
+ particles:{
+  number:{value:60},
+  color:{value:"#3b82f6"},
+  line_linked:{enable:true,color:"#3b82f6",opacity:.15},
+  move:{speed:.6}
+ }
+});
 </script>
 </body>
 </html>
