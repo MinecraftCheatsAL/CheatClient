@@ -5,31 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Minecraft Cheats Hub</title>
 
-<!-- INTER FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- INTRO -->
 <div id="intro">
   <h1>MINECRAFT CHEATS HUB</h1>
   <span>Loading modules...</span>
 </div>
 
-<!-- CURSOR -->
 <div class="cursor"></div>
 
-<!-- BACKGROUND LINES (Added from photo) -->
-<div id="lines"></div>
-
-<!-- FAKE UPDATER -->
 <div id="updater">
   <h3>Updating client...</h3>
   <div class="bar"><span></span></div>
 </div>
 
-<!-- FEATURE MODAL -->
 <div id="modal">
   <div class="modal-box">
     <h2 id="modal-title"></h2>
@@ -38,7 +30,6 @@
   </div>
 </div>
 
-<!-- MAIN -->
 <div id="main">
 <header>
   <h1>MINECRAFT CHEATS HUB</h1>
@@ -70,6 +61,13 @@
 
 <script>
 /* INTRO */
+const intro = document.getElementById('intro');
+const main = document.getElementById('main');
+const updater = document.getElementById('updater');
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modal-title');
+const modalFeatures = document.getElementById('modal-features');
+
 setTimeout(()=>{
   intro.classList.add("hide");
   main.classList.add("show");
@@ -127,14 +125,16 @@ function showModal(c){
 function closeModal(){modal.classList.remove("show");}
 
 /* PARTICLES */
-particlesJS("particles-js",{
- particles:{
-  number:{value:60},
-  color:{value:"#3b82f6"},
-  line_linked:{enable:true,color:"#3b82f6",opacity:.15},
-  move:{speed:.6}
- }
-});
+if(document.getElementById('particles-js')){
+  particlesJS("particles-js",{
+   particles:{
+    number:{value:60},
+    color:{value:"#3b82f6"},
+    line_linked:{enable:true,color:"#3b82f6",opacity:.15},
+    move:{speed:.6}
+   }
+  });
+}
 </script>
 </body>
 </html>
