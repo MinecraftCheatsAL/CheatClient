@@ -25,7 +25,7 @@ display:flex;flex-direction:column;align-items:center;justify-content:center;z-i
 #intro.hide{opacity:0;pointer-events:none;transition:opacity .6s}
 
 /* CURSOR */
-.cursor{width:12px;height:12px;background:#3b82f6;border-radius:50%;
+.cursor{width:16px;height:16px;background:#3b82f6;border-radius:50%;
 position:fixed;pointer-events:none;transform:translate(-50%,-50%);
 box-shadow:0 0 20px rgba(59,130,246,.6);z-index:1000}
 
@@ -35,8 +35,8 @@ box-shadow:0 0 20px rgba(59,130,246,.6);z-index:1000}
 
 /* HEADER */
 header{text-align:center;margin:80px 0 60px}
-header h1{color:#3b82f6;font-size:2.8rem;text-shadow:0 0 20px rgba(59,130,246,.6)}
-header p{color:#8aa0d6;margin-top:10px}
+header h1{color:#3b82f6;font-size:3rem;font-weight:700;text-shadow:0 0 20px rgba(59,130,246,.6)}
+header p{color:#8aa0d6;margin-top:10px;font-size:1.2rem}
 
 /* CARDS */
 .card-container{display:flex;gap:35px;justify-content:center;flex-wrap:wrap}
@@ -48,7 +48,7 @@ box-shadow:0 0 40px rgba(59,130,246,.4)}
 .client-icon{width:100px;height:100px;border-radius:18px;margin-bottom:20px;
 transition:.4s}
 .card:hover .client-icon{transform:rotate(8deg) scale(1.12)}
-.card p{color:#9bb0e5;font-size:.95rem}
+.card p{color:#9bb0e5;font-size:1rem;font-weight:600;line-height:1.5em}
 
 /* BUTTON */
 .btn{display:inline-block;margin-top:18px;padding:12px 28px;
@@ -65,7 +65,7 @@ opacity:0;pointer-events:none;transition:.4s;z-index:999}
 .modal-box{background:#0b1630;padding:30px 40px;border-radius:22px;
 box-shadow:0 0 40px rgba(59,130,246,.5)}
 .modal-box ul{margin:15px 0}
-.modal-box li{margin:8px 0;color:#9bb0e5}
+.modal-box li{margin:8px 0;color:#9bb0e5;font-weight:600}
 .modal-box button{margin-top:10px;padding:10px 25px;border:none;
 border-radius:999px;background:#3b82f6;color:white;cursor:pointer}
 
@@ -87,7 +87,4 @@ background:linear-gradient(90deg,#2563eb,#3b82f6);animation:load 3s forwards}
 @keyframes load{to{width:100%}}
 
 /* SOUND */
-#sound-toggle{position:fixed;top:20px;right:20px;background:#0b1630;
-color:#3b82f6;border:none;font-size:1.2rem;padding:10px 14px;
-border-radius:50%;cursor:pointer;
-box-shadow:0 0 20px rgba(59,130,246,.4);z-index:999}
+#sound-toggle{display:none;} /* Removed sound toggle */
