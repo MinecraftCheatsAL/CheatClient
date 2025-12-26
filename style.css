@@ -1,49 +1,105 @@
-/* Reset */
-* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
-body, html { width:100%; height:100%; overflow-x:hidden; position:relative; }
-
-/* Particles Background */
-#particles-js { position:fixed; width:100%; height:100%; z-index:-2; }
-
-/* Floating Gradient Overlay */
-body::before {
-    content:""; position:fixed; width:200%; height:200%; background:radial-gradient(circle at 50% 50%, rgba(255,61,0,0.05), transparent 70%);
-    animation: floatOverlay 30s linear infinite; z-index:-1;
+/* ---------- Basic Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-@keyframes floatOverlay {0%{transform:translate(0,0);}50%{transform:translate(-50px,50px);}100%{transform:translate(0,0);}}
 
-/* Custom Cursor */
-.cursor { position:fixed; width:20px; height:20px; border-radius:50%; border:2px solid #ff3d00;
-    pointer-events:none; transform:translate(-50%, -50%); transition:transform 0.1s ease-out, background 0.2s; z-index:9999; }
+/* ---------- Body & Fonts ---------- */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
 
-/* Body content */
-body { color:#fff; display:flex; flex-direction:column; align-items:center; padding:50px 20px; background:#0d0d0d; }
-header { text-align:center; margin-bottom:60px; }
-header h1 { font-size:3em; margin-bottom:10px; color:#ff3d00; text-shadow:0 0 15px #ff3d00; }
-header p { font-size:1.2em; color:#ccc; }
+/* ---------- Header ---------- */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+}
 
-/* Card container */
-.card-container { display:flex; gap:30px; flex-wrap:wrap; justify-content:center; }
+header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
 
-/* Cards */
-.card { background:rgba(20,20,20,0.85); padding:30px; border-radius:20px; width:280px; text-align:center; transition:transform 0.5s, box-shadow 0.5s; cursor:pointer; overflow:hidden; position:relative; }
-.card::before { content:""; position:absolute; width:250%; height:250%; background:radial-gradient(circle, rgba(255,61,0,0.15), transparent 70%); top:-50%; left:-50%; transform:rotate(0deg); animation:rotateGlow 6s linear infinite; pointer-events:none; }
-@keyframes rotateGlow {0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+header h2 {
+  font-size: 1.2rem;
+  color: #aaa;
+}
 
-/* Card Images */
-.card img { width:100px; height:100px; margin-bottom:20px; border-radius:15px; transition:transform 0.5s; }
+/* ---------- Clients Section ---------- */
+.clients {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 3rem auto;
+  max-width: 1000px;
+}
 
-/* Text */
-.card h2 { margin-bottom:10px; }
-.card p { color:#aaa; font-size:0.95em; }
+/* ---------- Client Cards ---------- */
+.client-card {
+  background: linear-gradient(145deg, #1e1e1e, #242424);
+  padding: 1.5rem 1rem;
+  border-radius: 15px;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.05);
+}
 
-/* Hover effects */
-.card:hover { transform:translateY(-15px) scale(1.05); box-shadow:0 25px 40px rgba(255,61,0,0.6);}
-.card:hover img { transform:rotate(15deg) scale(1.1); }
+.client-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+}
 
-/* Buttons */
-.btn { display:inline-block; margin-top:15px; padding:10px 25px; background:#ff3d00; color:#fff; border-radius:12px; text-decoration:none; transition:background 0.3s, transform 0.3s, box-shadow 0.3s; box-shadow:0 0 10px #ff3d00; }
-.btn:hover { background:#ff5722; transform:scale(1.05); box-shadow:0 0 25px #ff5722; }
+/* ---------- Client Images ---------- */
+.client-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
 
-/* Responsive */
-@media (max-width:700px) { .card-container { flex-direction:column; gap:20px; } }
+.client-card img:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* ---------- Client Names ---------- */
+.client-card p {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+/* ---------- Particles Background ---------- */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .clients {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .client-card {
+    width: 70%;
+  }
+}
