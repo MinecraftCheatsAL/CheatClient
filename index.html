@@ -22,10 +22,6 @@
 <!-- PARTICLES -->
 <div id="particles-js"></div>
 
-<!-- SOUND TOGGLE -->
-<button id="sound-toggle">🔊</button>
-<audio id="click-sound" src="assets/click.mp3"></audio>
-
 <!-- FAKE UPDATER -->
 <div id="updater">
   <h3>Updating client...</h3>
@@ -93,17 +89,6 @@ document.addEventListener("click",e=>{
   r.style.top=e.clientY+"px";
   document.body.appendChild(r);
   setTimeout(()=>r.remove(),600);
-});
-
-/* SOUND */
-let soundOn=true;
-const snd=document.getElementById("click-sound");
-document.getElementById("sound-toggle").onclick=()=>{
-  soundOn=!soundOn;
-  soundToggle.textContent=soundOn?"🔊":"🔇";
-};
-document.addEventListener("click",()=>{
-  if(soundOn){snd.currentTime=0;snd.play();}
 });
 
 /* UPDATER */
